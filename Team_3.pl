@@ -27,14 +27,6 @@ valid_move(I1,I2,Board):-
 	Y is div(X,2),
 	nth0(Y,Board,Output3),
 	Output3 = 1.
-
-% the predicate finds any variable and equals the variable to the equivelant element in the other list.
-copy_rest([],[]).
-copy_rest([H|T],[H|Y]):-
-	copy_rest(T,Y).
-copy_rest([_|T],[X|Y]):-
-	number(X),
-	copy_rest(T,Y).
 	
 %A helper predicate to replace the start position of the marble,the eaten marble,the end position of the marble from 0 to 1 or vise versa
 help_replace([_|T],0,Z,[Z|T]) .  
